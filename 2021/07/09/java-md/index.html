@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Java入门 | 驰星教育</title>
+  <meta name="description" content="体系大数据阶段,微服务+分布式+集群,ssm,springboot.深入java体系+全栈 强大的文本编辑软件 - notepad++过或者editplus或者vscode Java介绍 java之父 - james gosling 前身 - “oak”语言[电视机的机顶盒,嵌入式设备] java - 爪哇 - 印度尼西亚的爪哇岛 正式诞生于1995年5月23日-[jdk1.0版本],1996年推">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java入门">
+<meta property="og:url" content="http://example.com/2021/07/09/java-md/index.html">
+<meta property="og:site_name" content="驰星第一帅">
+<meta property="og:description" content="体系大数据阶段,微服务+分布式+集群,ssm,springboot.深入java体系+全栈 强大的文本编辑软件 - notepad++过或者editplus或者vscode Java介绍 java之父 - james gosling 前身 - “oak”语言[电视机的机顶盒,嵌入式设备] java - 爪哇 - 印度尼西亚的爪哇岛 正式诞生于1995年5月23日-[jdk1.0版本],1996年推">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-07-09T05:39:26.000Z">
+<meta property="article:modified_time" content="2021-07-09T07:47:40.209Z">
+<meta property="article:author" content="success">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2021/07/09/java-md/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="驰星第一帅" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/cofess" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">管成功</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">849962874@qq.com</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Suzhou, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/java/" style="font-size: 13px;">java</a> <a href="/tags/python/" style="font-size: 13px;">python</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/python/">python</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/07/09/python-md/" class="title">python.md</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-07-09T07:25:17.000Z" itemprop="datePublished">2021-07-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/java/">java</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/07/09/java-md/" class="title">Java入门</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-07-09T05:39:26.000Z" itemprop="datePublished">2021-07-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2021/07/09/hello-world/" class="title">Hello World</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-07-09T05:36:04.365Z" itemprop="datePublished">2021-07-09</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-java-md" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java入门
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2021/07/09/java-md/" class="article-date">
+	  <time datetime="2021-07-09T05:39:26.000Z" itemprop="datePublished">2021-07-09</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/java/" rel="tag">java</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/07/09/java-md/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="体系"><a href="#体系" class="headerlink" title="体系"></a>体系</h1><p>大数据阶段,<em><strong>微服务+分布式+集群</strong></em>,ssm,springboot.深入java体系+全栈</p>
+<p>强大的文本编辑软件 - notepad++过或者editplus或者vscode</p>
+<h1 id="Java介绍"><a href="#Java介绍" class="headerlink" title="Java介绍"></a>Java介绍</h1><ul>
+<li>java之父 - james gosling</li>
+<li>前身 - “oak”语言[电视机的机顶盒,嵌入式设备]</li>
+<li>java - 爪哇 - 印度尼西亚的爪哇岛</li>
+<li>正式诞生于1995年5月23日-[jdk1.0版本],1996年推出的jdk1.1版本.</li>
+<li>java原先是属于sun公司[太阳微电子]的,2009年被oracle[甲骨文]公司收购了.2010年10月24日正式合并了.</li>
+</ul>
+<h1 id="计算机编程语言的发展史"><a href="#计算机编程语言的发展史" class="headerlink" title="计算机编程语言的发展史"></a>计算机编程语言的发展史</h1><ul>
+<li><p>打孔</p>
+</li>
+<li><p>1010101010</p>
+</li>
+<li><p>汇编语言</p>
+</li>
+<li><p>面向过程语言:C</p>
+</li>
+<li><p>面向对象的语言:java,python</p>
+</li>
+<li><p>java是纯净版的C++</p>
+</li>
+</ul>
+<h1 id="Java语言的特点"><a href="#Java语言的特点" class="headerlink" title="Java语言的特点"></a>Java语言的特点</h1><ul>
+<li>属于面向对象的语言[OO]</li>
+<li>简单性</li>
+<li>健壮性,与平台无关性,可移植性,跨平台性 - JVM[java虚拟机]</li>
+<li>动态性</li>
+<li>多线程</li>
+</ul>
+<h1 id="人与计算机交互的方式"><a href="#人与计算机交互的方式" class="headerlink" title="人与计算机交互的方式"></a>人与计算机交互的方式</h1><ul>
+<li><p>CLI - Command Line Interface - 命令行方式</p>
+<p>早期就是应用在unix操作系统[最早的系统,诞生是1969年]</p>
+<p>必须要使用大量的DOS[磁盘操作系统]命令,操作也是比较麻烦的</p>
+</li>
+<li><p>GUI - Graphical User Interface - 图形化用户方式</p>
+<p>通过鼠标点击 - 傻瓜式操作.</p>
+</li>
+</ul>
+<p>感受 - jdk的安装目录下的bin目录</p>
+<p>jdK的根目录放入到D:/&gt;tools&gt;jdk_1.8.07</p>
+<p>以后所有的软件的安装都不要放在<em><strong>中文路径目录</strong></em>中以及带有特殊符号的目录中.</p>
+<h2 id="DOS命令-非重点"><a href="#DOS命令-非重点" class="headerlink" title="DOS命令[非重点]"></a>DOS命令[非重点]</h2><p>打开cmd - 打开黑窗口 - 打开控制台 - 打开命令行界面</p>
+<ul>
+<li><p>help - 是用来查看所有的dos命令</p>
+</li>
+<li><p>进入某个盘符,比如进入d</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:/&gt;<span class="title">d</span>:</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">进入到<span class="title">D</span>盘</span></span><br><span class="line"><span class="function"><span class="title">D</span>:/&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>查看当前所在位置下的所有的内容[目录或者文件]</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:/&gt;<span class="title">dir</span></span></span><br></pre></td></tr></table></figure></li>
+<li><p>创建目录</p>
+<p>在D盘的根目录下创建了一个目录[文件夹]名称为success.</p>
+<p>md - make directory</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:/&gt;<span class="title">md</span> <span class="title">success</span></span></span><br></pre></td></tr></table></figure></li>
+<li><p>进入到某个目录中去,比如现在想进入到success目录中去</p>
+<p>cd - change directory</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:/&gt;<span class="title">cd</span> <span class="title">success</span></span></span><br></pre></td></tr></table></figure></li>
+<li><p>创建文件</p>
+<p>在success目录下新建一个test.txt文件</p>
+<p>cd.&gt;新建文件[文件名以及文件的后缀名]</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:/<span class="title">success</span>/&gt;<span class="title">cd</span>.&gt;<span class="title">test.txt</span></span></span><br></pre></td></tr></table></figure></li>
+<li><p>.和..</p>
+<p>单个点代表的是当前目录<br>两个点代表的是上一级目录</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:/<span class="title">success</span>/&gt;<span class="title">cd</span> .</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">返回上一级目录</span><br><span class="line"><span class="function">D:/<span class="title">success</span>/&gt;<span class="title">cd</span> ..</span></span><br></pre></td></tr></table></figure>
+
+<p>返回多级的上层目录</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:/<span class="title">success</span>/&gt;<span class="title">cd</span> ../../..</span></span><br></pre></td></tr></table></figure>
+
+<p>返回到当前磁盘的根目录</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:/<span class="title">success</span>/<span class="title">temp</span>/<span class="title">aaa</span>/<span class="title">ccc</span>&gt;<span class="title">cd</span> ../../..<span class="title">D</span>:/<span class="title">success</span>/<span class="title">temp</span>/<span class="title">aaa</span>/<span class="title">ccc</span>&gt;<span class="title">cd</span> /</span></span><br></pre></td></tr></table></figure></li>
+<li><p>删除目录</p>
+<p><strong>磁盘的位置先恢复到d盘根目录下</strong>[主要是恢复到和success目录是同级的目录]</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:&gt;<span class="title">rmdir</span> <span class="title">success</span></span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>rmdir 目录名称</p>
+<p>仅仅只能删除空目录</p>
+</li>
+<li><p>rmdir /s /q 目录</p>
+<p>强制删除 - 非安全性的操作,在企业中是绝对不允许的.</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:&gt; <span class="title">rmdir</span> /<span class="title">s</span>/<span class="title">q</span> <span class="title">success</span></span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>exit - 关闭控制台</p>
+</li>
+</ul>
+<h1 id="环境变量的配置"><a href="#环境变量的配置" class="headerlink" title="环境变量的配置"></a>环境变量的配置</h1><p>jdk版本8.x - 官方地址:<a target="_blank" rel="noopener" href="http://www.oracle.com/">www.oracle.com</a></p>
+<p>没有进行环境变量配置的时候,要是想使用java.exe这些开发命令的时候,必须每次都要进入到bin目录,才能够识别这些命令,比较麻烦.目的就是希望在任何一个目录中输入这些命令都能够被识别.</p>
+<p>为什么需要进行环境变量的配置?</p>
+<ul>
+<li><p>打开cmd</p>
+<p>微软符号+r -&gt; cmd</p>
+</li>
+<li><p>输入notepad命令 - 是用来打开记事本程序.</p>
+<p>记事本这个应用程序是允许我们用户进行两种交互方式的.分别是GUI以及CLI</p>
+</li>
+<li><p>感受进入到<em><strong>java/jdk1.8/bin</strong></em>目录[存放我们开发工具的,比如<em><strong>java.exe</strong></em>] - 将会闪退.</p>
+<p>说明这个java.exe程序是不允许使用GUI方式进行交互的.只能通过CLI的方式进行交互.</p>
+</li>
+<li><p><strong>假设如果环境变量还没有配置的时候</strong>,打开控制台,直接输入:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:/&gt;<span class="title">java</span></span></span><br></pre></td></tr></table></figure>
+
+<p><em><strong>会报不是内部或者外部的命令.</strong></em></p>
+</li>
+<li><p>思考:为什么输入notepad命令的时候是成功的,但是输入java命令的时候是失败的呢?</p>
+</li>
+<li><p>继续输入path命令 - 查看计算机中的环境变量的配置的路径.它会有很多路径,每个路径与路径之间都是用分号隔开[必须是英文模式下的分号]</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:/<span class="title">WINDOWS</span></span></span><br></pre></td></tr></table></figure>
+
+<p>notepad.exe[NOTEPAD.exe]</p>
+</li>
+<li><p>解释一下windows操作系统是如何能够识别到notepad.exe程序的</p>
+<p>比如C:/&gt;notepad</p>
+<ul>
+<li><p>首先windows是先到当前目录下去寻找是否存在notepad.exe程序.如果当前目录下存在notepad.exe,那么就直接执行.</p>
+</li>
+<li><p>如果当前目录下不存在notepad.exe,那么windows就会继续去扫描path[环境变量配置的路径],<strong>扫描的顺序</strong></p>
+<p>**是从左到右,直到扫描到C:/**WINDOWS目录中发现存在了notepad.exe,所以能够成功执行</p>
+</li>
+<li><p>如果path路径中也没有哪个目录中包含natepad的时候,那么就会提示报错,不是内部或者外部的命令.</p>
+</li>
+</ul>
+<p>总结:<em><strong>path路径是windows操作系统在执行命令的时候会去检查的路径.</strong></em></p>
+</li>
+</ul>
+<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><ul>
+<li><p>右击计算机 -属性 -  高级系统设置 - 高级 - 环境变量 - 系统变量 - 新建</p>
+<p>变量名:JAVA_HOME</p>
+<p>变量值:D:/Java/jdk1.8.0_66</p>
+</li>
+<li><p>找到Path - 编辑</p>
+<p>%JAVA_HOME%\bin</p>
+</li>
+<li><p>以后,凡是系统级的配置修改了,那么控制台一定要重启,才能够看到最新的效果.</p>
+</li>
+<li><p>检测环境变量是否配置成功</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -versionjava version &quot;<span class="number">1</span>.<span class="number">8</span>.<span class="number">0</span>_66&quot;Java(TM) SE Runtime Environment (build <span class="number">1</span>.<span class="number">8</span>.<span class="number">0</span>_66-b17)Java HotSpot(TM) <span class="number">64</span>-Bit Server VM (build <span class="number">25</span>.<span class="number">66</span>-b17, mixed <span class="built_in">mode</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="Java程序体验"><a href="#Java程序体验" class="headerlink" title="Java程序体验"></a>Java程序体验</h1><p><em><strong>java程序从编写 - 编译 - 执行的过程和原理.</strong></em> - 不用关心代码是怎么写的???</p>
+<p>以.java为后缀的文件 - java的源文件</p>
+<p>以. class为后缀的文件 - java的字节码[二进制]文件</p>
+<p>HelloWorld.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义类//public 和 class都是java中的关键字//关键字 - 这门语言赋予了这些单词具备特殊的功能//功能 - 定义一个公开的类//类是java的基本单位.//&#123;&#125; - block块 - 代码块public class HelloWorld&#123;//此处的HelloWorld是类名[类的简称]  //固定的语法 - main方法 - 程序的主入口.  //现阶段 - 程序代码都是写在main方法体内的  public static void main(String[] args)&#123;		//jdk中提供的方法[封装好了的&quot;神器&quot;]    //输出一句话.    System.out.println(&quot;HelloWorld&quot;);  &#125;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>定位到HelloWorld.java的所在的当前目录</p>
+<p>javac 文件名.后缀名</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">admindeMacBook-Pro:Desktop admin$ javac HelloWorld.java </span><br></pre></td></tr></table></figure>
+
+<p>对java的源文件进行<strong>编译.</strong>[结论:java的源程序是不能够直接被底层的计算机系统识别的]</p>
+<p>在当前目录中就会生成HelloWorld.class文件[字节码文件]</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">admindeMacBook-Pro:Desktop admin$ java HelloWorldHelloWorld</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><p>.java[源文件] -&gt; 经过jdk中的编译器(javac.exe) -&gt; .class[字节码文件] </p>
+<p>-&gt; 经过jvm[java虚拟机]中的解释器[java.exe] -&gt; 对.class文件进行逐行解释[翻译]</p>
+<p>-&gt; 翻译成底层的操作系统的能够识别的语言.</p>
+<p>jvm - “YY”成 以.class文件为指令的CPU</p>
+<h1 id="JDK和JRE和JVM"><a href="#JDK和JRE和JVM" class="headerlink" title="JDK和JRE和JVM"></a>JDK和JRE和JVM</h1><ul>
+<li><p>JVM(Java Virtual Machine) - Java虚拟机 - 不跨,每个不同的操作系统的虚拟机是不一样的.</p>
+<p>java程序就是在jvm上运行的.  - “翻译官” - <strong>健壮性</strong>,与<strong>平台无关性</strong>,<strong>可移植性</strong>,<strong>跨平台性</strong></p>
+</li>
+<li><p>JRE(Java Runtime Environments) - java运行时环境.针对用户而言的,如果计算机中只要运行java程序的.只要安装jre即可.    jre中包括jvm以及支持java程序能够运行的核心的内库.</p>
+</li>
+<li><p>JDK(Java Development Kits) - java开发工具包 - 针对开发者.jdk中包含开发工具[java.exe,javac.exe,jar.exe,javadoc.exe,javap.exe…]以及JRE.</p>
+</li>
+</ul>
+<h2 id="编译型和解释型语言"><a href="#编译型和解释型语言" class="headerlink" title="编译型和解释型语言"></a>编译型和解释型语言</h2><p>C语言-&gt;编译型语言-&gt;一次性<strong>编译</strong>成操作系统识别的语言.</p>
+<p>“中文的新华字典” -&gt; 一次性的编译成[翻译] -&gt; “日本的新华字典”</p>
+<p>Java语言-&gt;解释型语言-&gt;只要每次使用到的时候就去翻译</p>
+<p>“中文的新华字典” 并不会一次性全部翻译成 “日本的新华字典”.</p>
+<p>查看到哪个汉字,那么翻译成对应的日文.</p>
+<h1 id="Java支持三个技术平台"><a href="#Java支持三个技术平台" class="headerlink" title="Java支持三个技术平台"></a>Java支持三个技术平台</h1><ul>
+<li><p>JavaSE(j2se) - java standard editional - java标准版 - java的核心</p>
+<p>适合进行桌面程序的开发.</p>
+</li>
+<li><p>JavaEE - java enterprise editional - java企业版,它不是一门具体的技术</p>
+<p>而是一套技术的规范.javasee中包含十三种核心技术[servlet,jsp…].</p>
+<p>更名成Jakarta</p>
+</li>
+<li><p>JavaME(Java Micro editional) - java微型版 - 手持设备</p>
+</li>
+</ul>
+<h1 id="包"><a href="#包" class="headerlink" title="包"></a>包</h1><p>package.作用:包是用来管理类的.包对于类的作用就是相当于文件夹对于文件的作用.</p>
+<p>命名规则:</p>
+<ul>
+<li><p>包名是推荐使用公司的域名倒置(比如com.baidu)+项目代号</p>
+</li>
+<li><p>全部由小写字母组成.如果出现多个单词,单词用.隔开</p>
+<p>每个单词都是一个目录.</p>
+</li>
+<li><p>不能以javax或者java开头.</p>
+</li>
+<li><p>package 声明包;//一定要出现在类文件中的首行的</p>
+</li>
+<li><p>之前的HelloWorld是类的简称.类的全称[类的全限定名]</p>
+<p>包名+类名- <em><strong>tech.aistar.day01.HelloWorld</strong></em></p>
+</li>
+</ul>
+<h1 id="类的命名规则"><a href="#类的命名规则" class="headerlink" title="类的命名规则"></a>类的命名规则</h1><ul>
+<li><p>文件名和类名要高度保持一致.</p>
+</li>
+<li><p>类名必须是由字母,数字,下划线或者$中的元素构成.</p>
+<p><em><strong>但是不能以数字开头</strong></em></p>
+</li>
+<li><p>推荐使用<strong>大驼峰命名法则</strong> - 首字母必须是大写,其他单词的首字母也要大写,其他的单词采用小写</p>
+<p>HelloWorld,[python或者mysql中hello_world-匈牙利命名方式]</p>
+</li>
+<li><p>命名不允许使用中文,中文的拼音.</p>
+</li>
+<li><p>不能是java中的关键字[public class static void main package out if while for …]</p>
+</li>
+<li><p>不能是java中的内置的对象(System,String,Date…)</p>
+</li>
+<li><p>提倡见名知意.</p>
+</li>
+<li><p>不能使用java中的三个<em><strong>字面量</strong></em>true,false,null</p>
+</li>
+<li><p>不能使用java中的俩个<em><strong>保留关键字const,goto</strong></em></p>
+</li>
+</ul>
+<h1 id="java中三种注释类型"><a href="#java中三种注释类型" class="headerlink" title="java中三种注释类型"></a>java中三种注释类型</h1><p>注释是给人看的.   1/3</p>
+<ul>
+<li><p>单行注释  ctrl+/</p>
+</li>
+<li><p>多行注释</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/**/</span><br></pre></td></tr></table></figure></li>
+<li><p>文档注释 - 用来解释Type,以及解释方法.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/***/</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2021/07/09/java-md/" title="Java入门" target="_blank" rel="external">http://example.com/2021/07/09/java-md/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/cofess" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/cofess" target="_blank"><span class="text-dark">管成功</span><small class="ml-1x">849962874@qq.com</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2021/07/09/python-md/" title="python.md"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2021/07/09/hello-world/" title="Hello World"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
